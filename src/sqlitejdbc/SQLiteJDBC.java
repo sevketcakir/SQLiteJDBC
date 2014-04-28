@@ -24,7 +24,7 @@ public class SQLiteJDBC {
             Connection connection = DriverManager.getConnection("jdbc:sqlite:sample.db");
             Statement stmt = connection.createStatement();
             ResultSet rs=stmt.executeQuery("SELECT * FROM Employee");
-            while(rs.next())
+            while(rs.next())//iterate through rows
             {
                 System.out.printf("%-15s\t%-15s\t%-15s\n",rs.getObject("EmployeeId"),rs.getObject("EmployeeName"),rs.getObject("EmployeeTitle"));
             }
