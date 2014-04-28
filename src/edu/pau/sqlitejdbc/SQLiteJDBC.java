@@ -5,6 +5,8 @@ import java.sql.*;
 /**
  *
  * @author Şevket Umut ÇAKIR
+ * Moved project to HSQLDB, as SQLite doesnt support ResultSet.TYPE_SCROLL_INSENSITIVE
+ * Scrolling can be achieved by JdbcRowSet class in javax.sql.rowset package
  */
 public class SQLiteJDBC {
 
