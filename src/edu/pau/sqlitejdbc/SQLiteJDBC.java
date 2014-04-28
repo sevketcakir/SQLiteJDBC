@@ -1,17 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-package sqlitejdbc;
+package edu.pau.sqlitejdbc;
 
 import java.sql.*;
 
 
 /**
  *
- * @author Şevket
+ * @author Şevket Umut ÇAKIR
  */
 public class SQLiteJDBC {
 
