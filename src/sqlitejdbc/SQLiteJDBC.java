@@ -26,7 +26,7 @@ public class SQLiteJDBC {
             ResultSet rs=stmt.executeQuery("SELECT * FROM Employee");
             while(rs.next())//iterate through rows
             {
-                System.out.printf("%-15s\t%-15s\t%-15s\n",rs.getObject("EmployeeId"),rs.getObject("EmployeeName"),rs.getObject("EmployeeTitle"));
+                System.out.printf("%-15s\t%-15s\t%-15s\n",rs.getObject("EmployeeId"),rs.getObject("EmployeeName"),rs.getObject("EmployeeLastName"));
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
