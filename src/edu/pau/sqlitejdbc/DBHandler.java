@@ -72,11 +72,12 @@ public class DBHandler {
      * @param sql SQL Statement to execute
      * @throws SQLException 
      */
-    public void executeNonQuery(String sql) throws SQLException {
+    public int executeNonQuery(String sql) throws SQLException {
         if (connection != null) {
             Statement stmt = connection.createStatement();
-            stmt.executeUpdate(sql);
+            return stmt.executeUpdate(sql);
         }
+        return -1;
     }
 
     /**

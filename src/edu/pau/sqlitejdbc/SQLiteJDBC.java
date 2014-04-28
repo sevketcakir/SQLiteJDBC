@@ -28,16 +28,18 @@ public class SQLiteJDBC {
             dbh.executeQuery(sql);
             dbh.printResultSet();
             //Randomly update department and title of the dummy entry
-            dbh.executeNonQuery("UPDATE Employee SET Department='" + Math.random() + "',Title='" + Math.random() + "' WHERE Id=21");
+            sql = "UPDATE Employee SET Department='" + Math.random() + "',Title='" + Math.random() + "' WHERE Id=21";
+            int rowCount = dbh.executeNonQuery(sql);
+            System.out.printf("%d row(s) affected\n", rowCount);
 
             /*
              * Use Connection, Statement, ResultSet classes
              * Write names of employees
              */
-            connection = DriverManager.getConnection("jdbc:sqlite:sample.db");
-            Statement stmt = connection.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM Employee");
-            while (rs.next()) {
+            connection = DriverManager.getConnection("jdbc:sqlite:sample.db");//Connect to database
+            Statement stmt = connection.createStatement();//Create a SCROLL_FORWARD statement
+            ResultSet rs = stmt.executeQuery("SELECT * FROM Employee");//Make the query
+            while (rs.next()) {//You can only move forward. SQLite doesn't support ResultSet.TYPE_SCROLL_SENSITIVE
                 System.out.println(rs.getObject("FirstName"));
             }
         } catch (SQLException e) {
